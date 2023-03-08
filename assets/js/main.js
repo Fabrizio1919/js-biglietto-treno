@@ -20,19 +20,13 @@ console.log(passengerAge);
 // Definire il prezzo in base ai chilometri (0.21 € al km)
 
 // Applicare sconto su minorenni del 20%
-
-const underAge () {
-    let anno = prompt("In quale anno sei nato?", "");
-    if (anno !== null) {
-          let datac = new Date();
-          let annoc = datac.getFullYear();
-          let eta = (annoc - anno);
-          if (eta < 18)
-                alert("Sei minorenne, hai "+eta + "anni");
-          else
-              alert("Sei maggiorenne, hai " +eta + "anni");
-     }
- }
+const underAge = prompt('Minorenne')
+const overrAge = prompt('Maggioenne')
+if(underAge < 18){
+    console.log('Minorenne');
+} else if (overAge > 18){
+    console.log('Maggiorenne')
+};
 
 // Applicare sconto per gli over 65 del 40%
 
