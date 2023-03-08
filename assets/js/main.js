@@ -7,28 +7,38 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio,
 
 
 // Chiedere all'utente i chilometri che vuole percorrere 
-const kilometers = prompt('Quanti chilometri vuoi percorrere?')
+const kilometers = Number(prompt('Quanti chilometri vuoi percorrere?'));
 console.log(kilometers);
 
 // Chiedere l'età al passegero 
-const passengerAge = prompt('Inserisci l\'età');
+const passengerAge = Number(prompt('Inserisci l\'età'));
 console.log(passengerAge);
-
-if(passengerAge < 18){
-    console.log('Minorenne');
-} else if (passengerAge > 18){
-    console.log('Maggiorenne')
-};
 
 // Calcolare il prezzo totale del viaggio
 
-
 // Definire il prezzo in base ai chilometri (0.21 € al km)
+const priceForKm = 0.21;
 
-// Applicare sconto su minorenni del 20%
+// Moltiplico il prezzo dei chilomentri più i chilometri percorsi 
+const priceTotal = kilometers * priceForKm;
+console.log(priceTotal)
 
 
+if (passengerAge < 18) {
+    // Applicare sconto su minorenni del 20%
+    console.log('Minorenne');
+    const discount20 = (priceTotal / 100) * 20;
+    finalPrice = Number(parseFloat(priceTotal - discount20).toFixed(2));
+    console.log(finalPrice);
 
-// Applicare sconto per gli over 65 del 40%
+} else if (passengerAge > 65) {
+    // Applicare sconto per gli over 65 del 40%
+    console.log('Over65');
+    const discount40 = (priceTotal / 100) * 40;
+    finalPrice = Number(parseFloat(priceTotal - discount40).toFixed(2));
+    console.log(finalPrice);
+    // Prezzo finale
+} else {
+    finalPrice = parseFloat(priceTotal).toFixed(2);
+}
 
-// Prezzo finale
