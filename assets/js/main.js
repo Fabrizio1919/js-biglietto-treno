@@ -14,19 +14,20 @@ console.log(kilometers);
 const passengerAge = prompt('Inserisci l\'età');
 console.log(passengerAge);
 
+if(passengerAge < 18){
+    console.log('Minorenne');
+} else if (passengerAge > 18){
+    console.log('Maggiorenne')
+};
+
 // Calcolare il prezzo totale del viaggio
 
 
 // Definire il prezzo in base ai chilometri (0.21 € al km)
 
 // Applicare sconto su minorenni del 20%
-const underAge = prompt('Minorenne')
-const overrAge = prompt('Maggioenne')
-if(underAge < 18){
-    console.log('Minorenne');
-} else if (overAge > 18){
-    console.log('Maggiorenne')
-};
+
+
 
 // Applicare sconto per gli over 65 del 40%
 
