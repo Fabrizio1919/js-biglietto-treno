@@ -21,24 +21,34 @@ const priceForKm = 0.21;
 
 // Moltiplico il prezzo dei chilomentri più i chilometri percorsi 
 const priceTotal = kilometers * priceForKm;
-console.log(priceTotal)
+console.log(priceTotal);
 
 
 if (passengerAge < 18) {
     // Applicare sconto su minorenni del 20%
     console.log('Minorenne');
     const discount20 = (priceTotal / 100) * 20;
-    finalPrice = Number(parseFloat(priceTotal - discount20).toFixed(2));
-    console.log(finalPrice);
+    finalPrice = (priceTotal - discount20);
+    console.log(finalPrice.toFixed(2));
 
 } else if (passengerAge > 65) {
     // Applicare sconto per gli over 65 del 40%
     console.log('Over65');
     const discount40 = (priceTotal / 100) * 40;
-    finalPrice = Number(parseFloat(priceTotal - discount40).toFixed(2));
-    console.log(finalPrice);
+    finalPrice = (priceTotal - discount40);
+    console.log(finalPrice.toFixed(2));
     // Prezzo finale
 } else {
-    finalPrice = parseFloat(priceTotal).toFixed(2);
-}
+    finalPrice =(priceTotal.toFixed(2));
+};
+
+const sentence = 
+`Chilometri ${kilometers} età del passeggero ${passengerAge} prezzo del biglietto ${priceTotal} €`;
+console.log(sentence);
+
+let cost = document.getElementById('costo');
+cost.innerHTML= sentence;
+
+
+
 
